@@ -1,25 +1,25 @@
 const items = [
     {
         id: 0,
-        nome: 'camiseta',
-        img: 'download.png',
+        nome: 'Camisetas Basic',
+        img: 'imagens/camiseta.png',
         quantidade: 0
     },
     {
         id: 1,
-        nome: 'short',
-        img: 'download.png',
+        nome: 'Bermuda Slim Rosa',
+        img: 'imagens/bermuda.png',
         quantidade: 0
     },
     {
         id: 2,
-        nome: 'sapato',
-        img: 'download.png',
+        nome: 'Nike Air Force 32.4',
+        img: 'imagens/sapato.png',
         quantidade: 0
     }
 ]
 
-inicializacaoLoja = () => {
+iniciarLoja = () => {
     var containerProdutos = document.getElementById('produtos');
     items.map((val)=>{
         containerProdutos.innerHTML += `
@@ -27,22 +27,22 @@ inicializacaoLoja = () => {
         <div class="produto-single">
             <img src="`+val.img+`" />
             <p>`+val.nome+`</p>
-            <a key="`+val.id+`" href="#">Adicionar ao carrinho!<a/>
+            <a key="`+val.id+`" href="#" ">Comprar<a/>
         </div>
 
         `;
     })
 }
 
-inicializacaoLoja();
+iniciarLoja();
 
 atualizarCarrinho = () => {
     var containerCarrinho = document.getElementById('carrinho');
-    containerCarrinho.innerHTML = '';
+    containerCarrinho.innerHTML = ''
     items.map((val)=>{
         if(val.quantidade > 0){
             containerCarrinho.innerHTML += `
-        <p>`+val.nome+` | quantidade: `+val.quantidade+`</p>
+        <p>`+val.nome+`| quantidade: `+val.quantidade+`</p>
         <hr>
         `;
         }
@@ -60,3 +60,5 @@ for (var i = 0; i < links.length; i++){
         return false;
     })
 }
+
+flutuar()
